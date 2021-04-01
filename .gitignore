@@ -1,0 +1,5 @@
+# Misc
+.env
+node_modules/
+build/
+
