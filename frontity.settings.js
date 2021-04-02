@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const settings = {
-  "name": "my-first-frontity-project",
+  "name": "fronblox",
   "state": {
     "frontity": {
       "url": process.env.PUBLIC_URL,

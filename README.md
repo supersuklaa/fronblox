@@ -1,6 +1,8 @@
-# my-first-frontity-project
+# fronblox
 
-This project was bootstrapped with [Frontity](https://frontity.org/).
+Just playing with [Frontity](https://frontity.org/) and Everblox, WP theme by [Evermade](https://evermade.fi/).
+
+The frontend is located [here](https://fronblox-a4oy2.ondigitalocean.app), but might crash time to time because the current source is used for other stuff time to time.
 
 #### Table of Contents
 
@@ -20,16 +22,6 @@ Runs the app in development mode. Open http://localhost:3000 to view it in the b
 The site will automatically reload if you make changes inside the `packages` folder. You will see the build errors in the console.
 
 > Have a look at our [Quick Start Guide](https://docs.frontity.org/getting-started/quick-start-guide)
-
-### Create your custom theme
-
-```
-npx frontity create-package your-custom-theme
-```
-
-Use the command `npx frontity create-package` to create a new package that can be set in your `frontity.settings.js` as your theme
-
-> Have a look at our blog post [How to Create a React WordPress Theme in 30 Minutes](https://frontity.org/blog/how-to-create-a-react-theme-in-30-minutes/)
 
 ### Create a production-ready build
 
