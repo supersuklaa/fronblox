@@ -4,7 +4,7 @@ const settings = {
   "name": "my-first-frontity-project",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
+      "url": process.env.PUBLIC_URL,
       "title": "The Fronblox Blog",
       "description": "Frontity covered Everblox cake"
     }
