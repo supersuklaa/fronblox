@@ -15,18 +15,6 @@ const settings = {
       "state": {
         "theme": {
           "menu": [
-            [
-              "Home",
-              "/"
-            ],
-            [
-              "All Stories",
-              "/story_archive/"
-            ],
-            [
-              "Everblox",
-              "/sample-page/"
-            ]
           ],
           "featured": {
             "showOnList": false,

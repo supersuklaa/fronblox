@@ -2,6 +2,7 @@ import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
 import link from "@frontity/html2react/processors/link";
+import menuHandler from "./components/handlers/menu-handler";
 
 const marsTheme = {
   name: "@frontity/mars-theme",
@@ -40,6 +41,9 @@ const marsTheme = {
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
       },
+      beforeSSR: async ({ actions }) => {
+        await actions.source.fetch(`/menu/main-menu/`);
+      },
     },
   },
   libraries: {
@@ -50,6 +54,9 @@ const marsTheme = {
        * You can add your own processors too.
        */
       processors: [image, iframe, link],
+    },
+    source: {
+      handlers: [menuHandler],
     },
   },
 };

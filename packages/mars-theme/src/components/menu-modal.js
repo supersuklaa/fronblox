@@ -2,7 +2,8 @@ import { styled, connect } from "frontity";
 import Link from "./link";
 
 const MenuModal = ({ state }) => {
-  const { menu } = state.theme;
+  const menu = state.source.get(`/menu/main-menu/`).items;
+
   const isThereLinks = menu != null && menu.length > 0;
 
   return (
@@ -10,13 +11,13 @@ const MenuModal = ({ state }) => {
       <MenuOverlay />
       <MenuContent as="nav">
         {isThereLinks &&
-          menu.map(([name, link]) => (
+          menu.map(({ title, link }) => (
             <MenuLink
-              key={name}
+              key={title}
               link={link}
               aria-current={state.router.link === link ? "page" : undefined}
             >
-              {name}
+              {title}
             </MenuLink>
           ))}
       </MenuContent>
@@ -25,7 +26,7 @@ const MenuModal = ({ state }) => {
 };
 
 const MenuOverlay = styled.div`
-  background-color: #1f38c5;
+  background-color: var(--bg-color);
   width: 100vw;
   height: 100vh;
   overflow: hidden auto;
@@ -53,7 +54,8 @@ const MenuLink = styled(Link)`
   }
   /* styles for active link */
   &[aria-current="page"] {
-    color: yellow;
+    color: var(--hover-color);
+
     font-weight: bold;
     /* border-bottom: 4px solid yellow; */
   }

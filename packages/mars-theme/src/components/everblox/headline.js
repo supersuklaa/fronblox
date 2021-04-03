@@ -5,7 +5,7 @@ const Headline = ({ data }) => {
     const opacity = +data.overlay_opacity / 100;
 
     return (
-        <Wrapper>
+        <Wrapper data-style='negative-bottom'>
             <Background>
                 <BackgroundImageWrapper>
                     <BackgroundImage style={{ backgroundImage }} />
@@ -29,8 +29,9 @@ const Wrapper = styled.section`
 
     position: relative;
     overflow: hidden;
-    background-color: #000;
     width: 100%;
+
+    border-top: solid var(--hover-color) 3px;
 `;
 
 const Background = styled.div`
@@ -41,6 +42,15 @@ const Background = styled.div`
     left: 0;
     overflow: hidden;
     z-index: 1;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 65%;
+        background: linear-gradient(to bottom, var(--bg-color-opacity-0), var(--bg-color-opacity-1));
+  }
 `;
 
 const BackgroundImageWrapper = styled.div`
@@ -61,6 +71,7 @@ const BackgroundImage = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     filter: grayscale(100%);
+    background-attachment:fixed;
 `;
 
 const Overlay = styled.div`
@@ -86,9 +97,9 @@ padding-top: var(--head-height);
 `;
 
 const TextWrapper = styled.div`
-    max-width: 75%;
-    padding-top: calc(10% + 10px);
-    padding-bottom: calc(10% + 10px);
+    max-width: 600px;
+    padding-top: calc(12% + 10px);
+    padding-bottom: calc(12% + 10px);
 `;
 
 const TextButtons = styled.div`
@@ -98,5 +109,5 @@ const TextButtons = styled.div`
 const Text = styled.h2`
     font-size: 4.8rem;
     margin-bottom: 35px;
-    color: #fff;
+color: var(--spicy-color);
 `;

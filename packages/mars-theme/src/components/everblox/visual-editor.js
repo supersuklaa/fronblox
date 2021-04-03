@@ -26,7 +26,7 @@ const Wrapper = styled.section`
 `;
 
 const Container = styled.div`
-margin: auto;
+margin: 0 auto 6em;
 max-width: var(--main-width);
 
 `;

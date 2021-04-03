@@ -16,8 +16,6 @@ const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
 
-  console.log(data)
-
   return (
     <>
       {/* Add some metatags to the <head> of the HTML. */}
@@ -56,11 +54,18 @@ export default connect(Theme);
 const globalStyles = css`
 
   body {
---main-width: 800px;
---main-color: rgba(209, 221, 223, 0.77);
---hover-color: rgba(232, 189, 208, 0.9);
---bg-color: rgba(9, 23, 30, 0.86);
---spicy-color: rgba(196, 180, 170, 0.8);
+--main-width: 1000px;
+
+--main-color:  #91959b;
+
+--bg-color: #1d2228;
+--bg-color-opacity-0: #1d222800;
+--bg-color-opacity-1: #1d2228ff;
+
+--hover-color: #d48166;
+--spicy-color: #bfc3c8;
+
+
 --head-height: 80px;
 
 color: var(--main-color);
@@ -74,6 +79,15 @@ margin: 0;
   a:visited {
     color: inherit;
     text-decoration: none;
+  }
+
+  [data-style="negative-bottom"] {
+    padding-bottom: 200px;
+    z-index: -1;
+
+    & + * {
+      margin-top: -200px !important;
+    }
   }
   
 `;
