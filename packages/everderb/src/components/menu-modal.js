@@ -1,21 +1,21 @@
-import { styled, connect } from "frontity";
-import Link from "./link";
+import { styled, connect } from 'frontity';
+import Link from './link';
 
 const MenuModal = ({ state }) => {
-  const menu = state.source.get(`/menu/main-menu/`).items;
+  const menu = state.source.get('/menu/main-menu/').items;
 
   const isThereLinks = menu != null && menu.length > 0;
 
   return (
     <>
       <MenuOverlay />
-      <MenuContent as="nav">
-        {isThereLinks &&
-          menu.map(({ title, link }) => (
+      <MenuContent as='nav'>
+        {isThereLinks
+          && menu.map(({ title, link }) => (
             <MenuLink
               key={title}
               link={link}
-              aria-current={state.router.link === link ? "page" : undefined}
+              aria-current={state.router.link === link ? 'page' : undefined}
             >
               {title}
             </MenuLink>

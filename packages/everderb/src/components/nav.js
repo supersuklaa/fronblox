@@ -1,5 +1,5 @@
-import { connect, styled } from "frontity";
-import Link from "./link";
+import { connect, styled } from 'frontity';
+import Link from './link';
 
 /**
  * Navigation Component
@@ -7,18 +7,17 @@ import Link from "./link";
  * It renders the navigation links
  */
 const Nav = ({ state }) => {
-  return null;
-  const menu = state.source.get(`/menu/main-menu/`).items;
+  const menu = state.source.get('/menu/main-menu/').items;
 
   return (
     <NavContainer>
       {menu.map(({ title, link }) => {
         // Check if the link matched the current page url
-        const isCurrentPage = state.router.link === link;
+        const ariaCurrent = state.router.link === link ? 'page' : undefined;
         return (
           <NavItem key={title}>
             {/* If link url is the current page, add `aria-current` for a11y */}
-            <Link link={link} aria-current={isCurrentPage ? "page" : undefined}>
+            <Link link={link} aria-current={ariaCurrent}>
               {title}
             </Link>
           </NavItem>
@@ -26,8 +25,7 @@ const Nav = ({ state }) => {
       })}
     </NavContainer>
   );
-
-}
+};
 export default connect(Nav);
 
 const NavContainer = styled.nav`

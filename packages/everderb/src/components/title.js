@@ -1,19 +1,18 @@
-import { Head, connect, decode } from "frontity";
+import { Head, connect, decode } from 'frontity';
 
 const Title = ({ state }) => {
   // Get data about the current URL.
   const data = state.source.get(state.router.link);
 
   // Set the default title.
-  let title = state.frontity.title;
+  let { title } = state.frontity;
 
   if (data.isTaxonomy) {
     // Add titles to taxonomies, like "Category: Nature - Blog Name" or "Tag: Japan - Blog Name".
     // 1. Get the taxonomy entity from the state to get its taxonomy term and name.
     const { taxonomy, name } = state.source[data.taxonomy][data.id];
     // 2. Uppercase first letter of the taxonomy term (from "category" to "Category").
-    const taxonomyCapitalized =
-      taxonomy.charAt(0).toUpperCase() + taxonomy.slice(1);
+    const taxonomyCapitalized = taxonomy.charAt(0).toUpperCase() + taxonomy.slice(1);
     // 3. Render the proper title.
     title = `${taxonomyCapitalized}: ${decode(name)} - ${state.frontity.title}`;
   } else if (data.isAuthor) {

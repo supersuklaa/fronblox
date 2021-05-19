@@ -1,5 +1,5 @@
-import { connect, useConnect } from "frontity";
-import Link from "@frontity/components/link";
+import { connect, useConnect } from 'frontity';
+import Link from '@frontity/components/link';
 
 /**
  * The MarsLink component, which is a wrapper on top of the {@link Link}

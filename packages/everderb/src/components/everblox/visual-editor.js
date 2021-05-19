@@ -1,20 +1,20 @@
-import { styled } from "frontity";
+import { styled } from 'frontity';
 
-const VisualEditor = ({ data }) =>{
-    const itemWidth = `${100 / data.columns.length}%`;
+const VisualEditor = ({ data }) => {
+  const itemWidth = `${100 / data.columns.length}%`;
 
-    return (
-        <Wrapper>
-            <Container>
-                <Items style={{ '--item-width': itemWidth }}>
-                    {data.columns.map((item, i) => (
-                        <Item key={i} dangerouslySetInnerHTML={{ __html: item.content }} />
-                    ))}
-                </Items>
-            </Container>
-        </Wrapper>
-    );
-} 
+  return (
+    <Wrapper>
+      <Container>
+        <Items style={{ '--item-width': itemWidth }}>
+          {data.columns.map((item, i) => (
+            <Item key={i} dangerouslySetInnerHTML={{ __html: item.content }} />
+          ))}
+        </Items>
+      </Container>
+    </Wrapper>
+  );
+};
 
 export default VisualEditor;
 

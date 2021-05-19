@@ -1,26 +1,26 @@
-import { styled } from "frontity";
+import { styled } from 'frontity';
 
 const Headline = ({ data }) => {
-    const backgroundImage = `url(${data.background_image.url})`;
-    const opacity = +data.overlay_opacity / 100;
+  const backgroundImage = `url(${data.background_image.url})`;
+  const opacity = +data.overlay_opacity / 100;
 
-    return (
-        <Wrapper data-style='negative-bottom'>
-            <Background>
-                <BackgroundImageWrapper>
-                    <BackgroundImage style={{ backgroundImage }} />
-                </BackgroundImageWrapper>
-                <Overlay style={{ opacity }} />
-            </Background>
-            <Container>
-                <TextWrapper>
-                    <TextButtons>
-                        <Text>{data.headline}</Text>
-                    </TextButtons>
-                </TextWrapper>
-            </Container>
-        </Wrapper>
-    );
+  return (
+    <Wrapper data-style='negative-bottom'>
+      <Background>
+        <BackgroundImageWrapper>
+          <BackgroundImage style={{ backgroundImage }} />
+        </BackgroundImageWrapper>
+        <Overlay style={{ opacity }} />
+      </Background>
+      <Container>
+        <TextWrapper>
+          <TextButtons>
+            <Text>{data.headline}</Text>
+          </TextButtons>
+        </TextWrapper>
+      </Container>
+    </Wrapper>
+  );
 };
 
 export default Headline;
@@ -110,4 +110,5 @@ const Text = styled.h2`
     font-size: 4.8rem;
     margin-bottom: 35px;
 color: var(--spicy-color);
+text-shadow: 2px 5px 30px var(--bg-color);
 `;

@@ -1,11 +1,11 @@
-import Theme from "./components";
-import image from "@frontity/html2react/processors/image";
-import iframe from "@frontity/html2react/processors/iframe";
-import link from "@frontity/html2react/processors/link";
-import menuHandler from "./components/handlers/menu-handler";
+import image from '@frontity/html2react/processors/image';
+import iframe from '@frontity/html2react/processors/iframe';
+import link from '@frontity/html2react/processors/link';
+import Theme from './components';
+import menuHandler from './components/handlers/menu-handler';
 
 const everderb = {
-  name: "everderb",
+  name: 'everderb',
   roots: {
     /**
      * In Frontity, any package can add React components to the site.
@@ -19,7 +19,7 @@ const everderb = {
      * relevant state. It is scoped to the `theme` namespace.
      */
     theme: {
-      autoPrefetch: "in-view",
+      autoPrefetch: 'in-view',
       menu: [],
       isMobileMenuOpen: false,
       featured: {
@@ -42,7 +42,7 @@ const everderb = {
         state.theme.isMobileMenuOpen = false;
       },
       beforeSSR: async ({ actions }) => {
-        await actions.source.fetch(`/menu/main-menu/`);
+        await actions.source.fetch('/menu/main-menu/');
       },
     },
   },

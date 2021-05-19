@@ -1,8 +1,7 @@
-import { useEffect } from "react";
-import { connect, styled } from "frontity";
-import Link from "./link";
-import List from "./list";
-import FeaturedMedia from "./featured-media";
+import { useEffect } from 'react';
+import { connect, styled } from 'frontity';
+import Link from './link';
+import FeaturedMedia from './featured-media';
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -23,8 +22,7 @@ const Post = ({ state, actions, libraries }) => {
    * the home page, everything is ready and it loads instantly.
    */
   useEffect(() => {
-    actions.source.fetch("/");
-    List.preload();
+    actions.source.fetch('/');
   }, []);
 
   // Load the post, but only if the data is ready.
@@ -44,7 +42,7 @@ const Post = ({ state, actions, libraries }) => {
               </StyledLink>
             )}
             <DateWrapper>
-              {" "}
+              {' '}
               on <b>{date.toDateString()}</b>
             </DateWrapper>
           </div>

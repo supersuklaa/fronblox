@@ -1,12 +1,13 @@
-import { Global, css, connect, styled, Head } from "frontity";
-import Switch from "@frontity/components/switch";
-import Header from "./header";
-import List from "./list";
-import Post from "./post";
-import Loading from "./loading";
-import Title from "./title";
-import PageError from "./page-error";
-import Everblox from "./everblox";
+import {
+  Global, css, connect, styled, Head,
+} from 'frontity';
+import Switch from '@frontity/components/switch';
+import Header from './header';
+import Post from './post';
+import Loading from './loading';
+import Title from './title';
+import PageError from './page-error';
+import Everblox from './everblox';
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -21,11 +22,11 @@ const Theme = ({ state }) => {
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
       <Head>
-        <meta name="description" content={state.frontity.description} />
-        <html lang="en" />
+        <meta name='description' content={state.frontity.description} />
+        <html lang='en' />
       </Head>
 
-      {/* Add some global styles for the whole site, like body or a's. 
+      {/* Add some global styles for the whole site, like body or a's.
       Not classes here because we use CSS-in-JS. Only global HTML tags. */}
       <Global styles={globalStyles} />
 
@@ -40,7 +41,6 @@ const Theme = ({ state }) => {
         <Switch>
           <Loading when={data.isFetching} />
           <Everblox when={data.type === 'page' || data.isHome} />
-          <List when={data.isArchive} />
           <Post when={data.isPostType} />
           <PageError when={data.isError} />
         </Switch>
