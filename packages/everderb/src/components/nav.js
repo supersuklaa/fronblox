@@ -7,6 +7,7 @@ import Link from "./link";
  * It renders the navigation links
  */
 const Nav = ({ state }) => {
+  return null;
   const menu = state.source.get(`/menu/main-menu/`).items;
 
   return (

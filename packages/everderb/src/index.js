@@ -4,8 +4,8 @@ import iframe from "@frontity/html2react/processors/iframe";
 import link from "@frontity/html2react/processors/link";
 import menuHandler from "./components/handlers/menu-handler";
 
-const marsTheme = {
-  name: "@frontity/mars-theme",
+const everderb = {
+  name: "everderb",
   roots: {
     /**
      * In Frontity, any package can add React components to the site.
@@ -61,4 +61,4 @@ const marsTheme = {
   },
 };
 
-export default marsTheme;
+export default everderb;

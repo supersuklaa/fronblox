@@ -6,6 +6,7 @@ import VisualEditor from "./visual-editor";
 const Everblox = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+
   // Get the data of the post.
   const post = state.source[data.type][data.id];
 

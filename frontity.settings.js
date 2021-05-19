@@ -11,7 +11,7 @@ const settings = {
   },
   "packages": [
     {
-      "name": "@frontity/mars-theme",
+      "name": "everderb",
       "state": {
         "theme": {
           "menu": [
@@ -28,11 +28,12 @@ const settings = {
       "state": {
         "source": {
           "url": process.env.SOURCE_URL,
+          "auth": "Basic ZW06bWFkZQ==",
           "postTypes": [
             {
-              "type": "story",
-              "endpoint": "story",
-              "archive": "/story_archive",
+              "type": "page",
+              "endpoint": "page",
+              "archive": "/page_archive",
             },
           ]
         }
